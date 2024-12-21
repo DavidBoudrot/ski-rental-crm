@@ -1,3 +1,5 @@
+package com.david;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.core.Configuration;
 import jakarta.validation.constraints.NotEmpty;

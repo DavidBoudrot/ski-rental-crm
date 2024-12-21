@@ -1,17 +1,14 @@
-package resources;
+package com.david.resources;
 
-
-import com.codahale.metrics.annotation.Timed;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import com.david.models.ImmutableNewSnowboardRequestIF;
+import com.david.models.ImmutableSnowboardIF;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Path("/v1/snowboards")
+@Path("/snowboards")
 @Produces(MediaType.APPLICATION_JSON)
 public class SnowboardResource {
     private final String template;
@@ -24,9 +21,24 @@ public class SnowboardResource {
         this.counter = new AtomicLong();
     }
 
+    @POST
+    public void createSnowboard(ImmutableNewSnowboardRequestIF newSnowboardRequestIF) {
+
+    }
+
+
+    @Path("/v1/{snowboardId}")
+    @DELETE
+    public void deleteSnowboard(@PathParam("snowboardId") Long snowboardId) {
+
+    }
+
+    @Path("/v1/{snowboardId}")
     @GET
-    public Optional<Snowboard> sayHello(@QueryParam("name") Optional<String> name) {
-        final String value = String.format(template, name.orElse(defaultName));
-        return new Saying(counter.incrementAndGet(), value);
+    public Optional<ImmutableSnowboardIF> getSnowboard(@PathParam("snowboardId") Long snowboardId) {
+        return Optional.of(ImmutableSnowboardIF.builder()
+                .snowboardId(0).color("green")
+                .isSymmetrical(false)
+                .length(100).build());
     }
 }

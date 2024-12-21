@@ -1,4 +1,4 @@
-package models;
+package com.david.models;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package models;
+package com.david.models;
 
 import org.immutables.value.Value.Immutable;
 
