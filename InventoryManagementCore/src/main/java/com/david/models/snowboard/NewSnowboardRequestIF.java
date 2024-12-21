@@ -1,4 +1,4 @@
-package com.david.models;
+package com.david.models.snowboard;
 
 
 import org.immutables.value.Value.Immutable;

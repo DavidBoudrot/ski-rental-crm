@@ -1,5 +1,6 @@
-package com.david.models;
+package com.david.models.skis;
 
+import com.david.models.snowboard.SnowboardCore;
 import org.immutables.value.Value.Immutable;
 
 @Immutable

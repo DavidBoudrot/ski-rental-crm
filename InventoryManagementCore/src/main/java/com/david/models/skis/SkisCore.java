@@ -1,4 +1,4 @@
-package com.david.models;
+package com.david.models.skis;
 
 public interface SkisCore {
     String getColor();
