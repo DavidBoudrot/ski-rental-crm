@@ -2,32 +2,19 @@ package com.david;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.core.Configuration;
-import jakarta.validation.constraints.NotEmpty;
+import io.dropwizard.db.DataSourceFactory;
+import jakarta.validation.constraints.NotNull;
 
 public class InventoryManagementConfiguration extends Configuration {
-    @NotEmpty
-    private String template;
+    @NotNull
+    @JsonProperty("database")
+    private DataSourceFactory database = new DataSourceFactory();
 
-    @NotEmpty
-    private String defaultName = "defaultName";
-
-    @JsonProperty
-    public String getTemplate() {
-        return template;
+    public DataSourceFactory getDatabase() {
+        return database;
     }
 
-    @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
-    }
-
-    @JsonProperty
-    public String getDefaultName() {
-        return defaultName;
-    }
-
-    @JsonProperty
-    public void setDefaultName(String name) {
-        this.defaultName = name;
+    public void setDatabase(DataSourceFactory database) {
+        this.database = database;
     }
 }

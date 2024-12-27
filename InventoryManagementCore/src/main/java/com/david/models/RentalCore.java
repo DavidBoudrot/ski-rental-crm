@@ -4,6 +4,8 @@ import java.util.Optional;
 
 public interface RentalCore {
 
+    long getRentalId();
+
     Optional<Long> getUserId();
 
     long getRentalDate();

@@ -21,7 +21,12 @@
         <dependency>
             <groupId>com.david</groupId>
             <artifactId>InventoryManagementCore</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.david</groupId>
+            <artifactId>InventoryManagementData</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.immutables</groupId>

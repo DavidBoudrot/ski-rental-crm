@@ -1,7 +1,7 @@
 package com.david.resources;
 
-import com.david.models.ImmutableNewSnowboardRequestIF;
-import com.david.models.ImmutableSnowboardIF;
+import com.david.models.snowboard.ImmutableNewSnowboardRequestIF;
+import com.david.models.snowboard.ImmutableSnowboardIF;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
@@ -26,7 +26,6 @@ public class SnowboardResource {
 
     }
 
-
     @Path("/v1/{snowboardId}")
     @DELETE
     public void deleteSnowboard(@PathParam("snowboardId") Long snowboardId) {
@@ -39,6 +38,6 @@ public class SnowboardResource {
         return Optional.of(ImmutableSnowboardIF.builder()
                 .snowboardId(0).color("green")
                 .isSymmetrical(false)
-                .length(100).build());
+                .snowboardLength(100).build());
     }
 }
