@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.core.Configuration;
 import jakarta.validation.constraints.NotEmpty;
 
-public class InventoryManagementConfiguration  extends Configuration {
+public class InventoryManagementConfiguration extends Configuration {
     @NotEmpty
     private String template;
 
